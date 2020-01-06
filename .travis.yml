@@ -4,3 +4,6 @@ services:
 
 before_install:
   - docker build -t stfdmv/docker-react Dockerfile.dev .
+
+script:
+  - docker run -e CI=true stfdmv/docker-react npm run test -- --coverage
